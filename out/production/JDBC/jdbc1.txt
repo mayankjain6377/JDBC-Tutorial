@@ -1,0 +1,17 @@
+1) Load the Driver
+   class.forName("com.mysql.jdbc.Driver") this is written in try and catch block
+2) Create a Connection ;
+   Connection con = DriverManager.getConnection("URL","USERNAME","PASSWORD");
+   e.g: Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Db_name","root","******");
+3) Create Query
+   String q="select * from students ";
+   Statement stmt =con.CreateStatement();
+   Result set=stmt.executeQuery(q);
+4) process data
+   while(set.next())
+   {
+   int id=set.getInt(column_number);
+   String str=set.getString("Student_name");
+   }
+5) Close the connection
+   con.close();
